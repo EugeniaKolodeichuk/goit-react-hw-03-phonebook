@@ -14,16 +14,18 @@ class App extends Component {
     filter: '',
   };
 
-  /* componentDidMount() {
+  componentDidMount() {
     const localContacts = localStorage.getItem('contacts');
     const parseContacts = JSON.parse(localContacts);
-    this.setState({ contacts: parseContacts });
+    if (parseContacts) {
+      this.setState({ contacts: parseContacts });
+    }
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.contacts !== this.state.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
-  } */
+  }
 
   onAddContact = obj => {
     const contacts = {
